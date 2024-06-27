@@ -12,11 +12,12 @@
       <!-- 右侧内容栏内容 -->
       <div class="card-container">
         <div class="card-grid">
-          <div class="card" v-for="(item, index) in cards" :key="index">
+          <div class="card" v-for="(item, index) in exercises" :key="index">
+            <p>{{ item.id }}</p>
             <h3>{{ item.title }}</h3>
             <p>{{ item.content }}</p>
           </div>
-          <div class="card add-card">
+          <div class="card add-card" @click="add">
             <i class="fas fa-plus"></i>
             <p>添加卡片</p>
           </div>
@@ -26,30 +27,22 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'MyPage',
-  data() {
-    return {
-      cards: [
-        { title: '卡片标题1', content: '卡片内容1' },
-        { title: '卡片标题2', content: '卡片内容2' },
-        { title: '卡片标题2', content: '卡片内容2' },
-        { title: '卡片标题2', content: '卡片内容2' },
-        { title: '卡片标题2', content: '卡片内容2' },
-        { title: '卡片标题2', content: '卡片内容2' },
-        { title: '卡片标题2', content: '卡片内容2' },
-        { title: '卡片标题2', content: '卡片内容2' },
-        { title: '卡片标题2', content: '卡片内容2' },
-        { title: '卡片标题2', content: '卡片内容2' },
-        { title: '卡片标题2', content: '卡片内容2' },
-        { title: '卡片标题2', content: '卡片内容2' },
-        { title: '卡片标题3', content: '卡片内容3' },
-        { title: '卡片标题4', content: '卡片内容4' }
-      ]
-    }
-  }
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useExerciseStore } from '@/stores'
+import { storeToRefs } from 'pinia'
+import { Exercise } from '@/stores/modules/exercise/types'
+import { nanoid } from 'nanoid'
+
+
+const store = useExerciseStore()
+var { exercises } = storeToRefs(store)
+
+const add = () => {
+  store.addExercise(new Exercise(nanoid(), '新卡片', '新卡片内容'))
+
 }
+
 </script>
 
 <style scoped>
