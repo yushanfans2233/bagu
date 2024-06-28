@@ -1,7 +1,7 @@
 import { ref } from "vue"
 import { defineStore } from "pinia"
 import localforage from "localforage"
-import type { Exercise } from "./types"
+import { Exercise } from "./types"
 
 const name = 'exercise'
 
@@ -11,7 +11,7 @@ export const useExerciseStore = defineStore(name, () => {
   const exercises = ref<Exercise[]>([])
 
   storage.iterate((exercise: Exercise, _) => {
-    exercises.value.push(exercise)
+    exercises.value.push(new Exercise(exercise.id, exercise.title, exercise.content))
   })
 
   function addExercise(exercise: Exercise) {
