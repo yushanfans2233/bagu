@@ -16,22 +16,21 @@
 </template>
 
 <script setup lang="ts">
-import Panel from 'primevue/panel';
-import Menu from 'primevue/menu';
-import Button from 'primevue/button';
-import { ref } from 'vue';
 import { Exercise } from '@/stores/modules/exercise/types'
+import Menu from 'primevue/menu'
+import Panel from 'primevue/panel'
+import { ref } from 'vue'
 
 
 defineProps({
   template: Exercise
 })
 
-const menu = ref(null);
+const menu = ref(null)
 
-const toggle = (event) => {
-  menu.value.toggle(event);
-};
+const toggle = (event: MouseEvent) => {
+  menu.value.toggle(event)
+}
 
 const items = ref([
   {
@@ -49,5 +48,5 @@ const items = ref([
     label: 'Delete',
     icon: 'pi pi-times'
   }
-]);
+])
 </script>
