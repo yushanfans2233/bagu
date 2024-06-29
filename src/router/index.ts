@@ -9,12 +9,12 @@ const router = createRouter({
     },{
         path: '/add',
         name:'addpage',
-        component: () => import('../views/AddTemplatePage.vue')
+        component: () => import('../views/AddTemplate.vue')
     },
     {
         path: '/show',
         name: 'showpage',
-        component: () => import('../pages/ShowPage.vue')
+        component: () => import('../views/ShowTemplate.vue')
     },
     ]
 })

@@ -1,8 +1,8 @@
 import { createPinia } from 'pinia'
-import { useExerciseStore } from './modules/exercise'
+import { useTemplateStore } from './modules/template'
 
 const pinia = createPinia()
 
-export { useExerciseStore }
+export { useTemplateStore }
 
 export default pinia

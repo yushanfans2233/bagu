@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import Badge from 'primevue/badge'
 import Menubar from 'primevue/menubar'
-import ShowPage from '../pages/ShowPage.vue'
+import ShowPage from './ShowTemplate.vue'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 

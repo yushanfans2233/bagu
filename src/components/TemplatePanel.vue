@@ -16,14 +16,14 @@
 </template>
 
 <script setup lang="ts">
-import { Exercise } from '@/stores/modules/exercise/types'
 import Menu from 'primevue/menu'
 import Panel from 'primevue/panel'
+import { Template } from '@/stores/modules/template/types'
 import { ref } from 'vue'
 
 
 defineProps({
-  template: Exercise
+  template: Template
 })
 
 const menu = ref(null)

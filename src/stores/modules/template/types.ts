@@ -1,4 +1,4 @@
-export class Exercise {
+export class Template {
   constructor(id: string, title: string, content: string) {
     this.id = id
     this.title = title
