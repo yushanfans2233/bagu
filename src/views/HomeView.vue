@@ -26,13 +26,11 @@ import ShowPage from './ShowTemplate.vue'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-
 const router = useRouter()
 const items = ref([
   {
     label: '添加模板',
     icon: 'pi pi-file-plus',
-    // 重定向到 /add 页面
     action: () => {
       router.push('/add')
     },
