@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true
+  },
+  "globals": {},
+  "settings": {},
+  "rules": {
+    "eqeqeq": "error",
+    "no-unused-labels": "error",
+    "no-debugger": "error",
+    "no-delete-var": "error",
+    "no-dupe-class-members": "error",
+    "no-dupe-else-if": "error",
+    "no-dupe-keys": "error",
+    "sort-imports": "error"
+  }
+}

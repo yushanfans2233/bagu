@@ -7,10 +7,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useExerciseStore } from '@/stores'
-import { storeToRefs } from 'pinia'
 import TemplatePanel from '@/components/TemplatePanel.vue'
+import { storeToRefs } from 'pinia'
+import { useExerciseStore } from '@/stores'
 
 const store = useExerciseStore()
 var { exercises } = storeToRefs(store)

@@ -1,5 +1,5 @@
 import { createPinia } from 'pinia'
-import { useExerciseStore } from "./modules/exercise"
+import { useExerciseStore } from './modules/exercise'
 
 const pinia = createPinia()
 

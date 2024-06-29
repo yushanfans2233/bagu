@@ -1,6 +1,6 @@
 <template>
   <Menubar :model="items">
-    <template #item="{ item, props, hasSubmenu, root }">
+    <template #item="{ item, hasSubmenu, root }">
       <a class="flex items-center" @click="item.action">
         <span :class="item.icon" />
         <span class="ml-2" @click="updateVisible">{{ item.label }}</span>
@@ -20,23 +20,16 @@
 </template>
 
 <script setup lang="ts">
-import Avatar from 'primevue/avatar';
-import Badge from 'primevue/badge';
-import InputText from 'primevue/inputtext';
-import Button from 'primevue/button';
-import Menubar from 'primevue/menubar';
-import { useExerciseStore } from '@/stores'
-import { storeToRefs } from 'pinia'
+import Badge from 'primevue/badge'
 import { Exercise } from '@/stores/modules/exercise/types'
-import { nanoid } from 'nanoid'
-
+import Menubar from 'primevue/menubar'
 import ShowPage from '../pages/ShowPage.vue'
+import { nanoid } from 'nanoid'
 import { ref } from 'vue'
+import { useExerciseStore } from '@/stores'
+
 
 const store = useExerciseStore()
-var { exercises } = storeToRefs(store)
-
-
 
 const items = ref([
   {
@@ -46,5 +39,5 @@ const items = ref([
       store.addExercise(new Exercise(nanoid(), '新卡片', '新卡片内容'))
     }
   },
-]);
+])
 </script>

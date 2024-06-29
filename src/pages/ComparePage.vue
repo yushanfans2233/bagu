@@ -10,17 +10,17 @@
 </template>
 
 <script setup>
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
-import {onMounted, ref, watch} from 'vue';
+import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
+import {onMounted, ref, watch} from 'vue'
 
-const originalText = ref('');
-const modifiedText = ref('');
+const originalText = ref('')
+const modifiedText = ref('')
 
-const originalEditorContainer = ref(null);
-const modifiedEditorContainer = ref(null);
-const diffEditorContainer = ref(null);
+const originalEditorContainer = ref(null)
+const modifiedEditorContainer = ref(null)
+const diffEditorContainer = ref(null)
 
-let originalEditor, modifiedEditor, diffEditor;
+let originalEditor, modifiedEditor, diffEditor
 
 onMounted(() => {
   originalEditor = monaco.editor.create(originalEditorContainer.value, {
@@ -28,43 +28,43 @@ onMounted(() => {
     language: 'text',
     theme: 'vs-dark',
     minimap: {enabled: false},
-  });
+  })
 
   modifiedEditor = monaco.editor.create(modifiedEditorContainer.value, {
     value: modifiedText.value,
     language: 'text',
     theme: 'vs-dark',
     minimap: {enabled: false},
-  });
+  })
 
   diffEditor = monaco.editor.createDiffEditor(diffEditorContainer.value, {
     enableSplitViewResizing: false,
     readOnly: true,
     theme: 'vs-dark',
     minimap: {enabled: false},
-  });
+  })
 
   originalEditor.onDidChangeModelContent(() => {
-    updateDiff();
-  });
+    updateDiff()
+  })
 
   modifiedEditor.onDidChangeModelContent(() => {
-    updateDiff();
-  });
-});
+    updateDiff()
+  })
+})
 
 watch([originalText, modifiedText], () => {
-  updateDiff();
-});
+  updateDiff()
+})
 
 function updateDiff() {
-  const originalModel = monaco.editor.createModel(originalEditor.getValue(), 'text/plain');
-  const modifiedModel = monaco.editor.createModel(modifiedEditor.getValue(), 'text/plain');
+  const originalModel = monaco.editor.createModel(originalEditor.getValue(), 'text/plain')
+  const modifiedModel = monaco.editor.createModel(modifiedEditor.getValue(), 'text/plain')
 
   diffEditor.setModel({
     original: originalModel,
     modified: modifiedModel,
-  });
+  })
 }
 </script>
 
