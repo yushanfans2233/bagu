@@ -24,10 +24,11 @@ import Button from 'primevue/button'
 import InputText from 'primevue/inputtext'
 import Textarea from 'primevue/textarea'
 import Toast from 'primevue/toast'
+import { useToast } from 'primevue/usetoast'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+
 import { useTemplateStore } from '@/stores'
-import { useToast } from 'primevue/usetoast'
 
 
 const router = useRouter()

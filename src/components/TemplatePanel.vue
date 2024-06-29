@@ -18,9 +18,9 @@
 <script setup lang="ts">
 import Menu from 'primevue/menu'
 import Panel from 'primevue/panel'
-import { Template } from '@/stores/modules/template/types'
 import { ref } from 'vue'
 
+import { Template } from '@/stores/modules/template/types'
 
 defineProps({
   template: Template

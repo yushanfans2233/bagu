@@ -1,12 +1,12 @@
 import './assets/main.css'
 
-import App from './App.vue'
 import Aura from '@primevue/themes/aura'
+import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config'
 import ToastService from 'primevue/toastservice'
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 
+import App from './App.vue'
 import router from './router'
 
 const app = createApp(App)

@@ -22,16 +22,12 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest'
   },
+  plugins: ['simple-import-sort'],
   rules: {
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
-    'sort-imports': ['error', {
-      'ignoreCase': false,
-      'ignoreDeclarationSort': false,
-      'ignoreMemberSort': false,
-      'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single'],
-      'allowSeparatedGroups': false
-    }],
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
     '@typescript-eslint/no-unused-vars': ['error']
   }
 }

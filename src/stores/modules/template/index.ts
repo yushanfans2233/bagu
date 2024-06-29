@@ -1,8 +1,9 @@
-import { Template } from './types'
-import { defineStore } from 'pinia'
 import localforage from 'localforage'
 import { nanoid } from 'nanoid'
+import { defineStore } from 'pinia'
 import { ref } from 'vue'
+
+import { Template } from './types'
 
 const name = 'templates'
 

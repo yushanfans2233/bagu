@@ -22,9 +22,10 @@
 <script setup lang="ts">
 import Badge from 'primevue/badge'
 import Menubar from 'primevue/menubar'
-import ShowPage from './ShowTemplate.vue'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+
+import ShowPage from './ShowTemplate.vue'
 
 const router = useRouter()
 const items = ref([
