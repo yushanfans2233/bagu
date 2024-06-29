@@ -7,8 +7,9 @@
 </template>
 
 <script setup lang="ts">
-import TemplatePanel from '@/components/TemplatePanel.vue'
 import { storeToRefs } from 'pinia'
+
+import TemplatePanel from '@/components/TemplatePanel.vue'
 import { useTemplateStore } from '@/stores'
 
 const store = useTemplateStore()
