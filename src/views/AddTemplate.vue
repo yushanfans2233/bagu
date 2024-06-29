@@ -20,16 +20,15 @@
 import Button from 'primevue/button'
 import InputText from 'primevue/inputtext'
 import Textarea from 'primevue/textarea'
-import { Exercise } from '@/stores/modules/exercise/types'
-import { nanoid } from 'nanoid'
+
 import { ref } from 'vue'
-import { useExerciseStore } from '@/stores'
 import { useRouter } from 'vue-router'
+import { useTemplateStore } from '@/stores'
 
 
 const router = useRouter()
 
-const store = useExerciseStore()
+const store = useTemplateStore()
 const titleValue = ref('')
 const contentValue = ref('')
 
@@ -44,7 +43,7 @@ const save = () => {
     return
   }
 
-  store.addExercise(new Exercise(nanoid(),titleValue.value,contentValue.value))
+  store.addTemplate(titleValue.value, contentValue.value)
   alert('保存成功')
   router.push('/')
 }

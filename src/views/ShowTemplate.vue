@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="(item, index) in exercises" :key="index">
+    <li v-for="(item, index) in templates" :key="index">
       <TemplatePanel :template="item" />
     </li>
   </ul>
@@ -9,10 +9,10 @@
 <script setup lang="ts">
 import TemplatePanel from '@/components/TemplatePanel.vue'
 import { storeToRefs } from 'pinia'
-import { useExerciseStore } from '@/stores'
+import { useTemplateStore } from '@/stores'
 
-const store = useExerciseStore()
-var { exercises } = storeToRefs(store)
+const store = useTemplateStore()
+var { templates } = storeToRefs(store)
 
 
 </script>
