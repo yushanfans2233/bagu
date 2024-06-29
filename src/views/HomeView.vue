@@ -3,7 +3,7 @@
     <template #item="{ item, hasSubmenu, root }">
       <a class="flex items-center" @click="item.action">
         <span :class="item.icon" />
-        <span class="ml-2" @click="updateVisible">{{ item.label }}</span>
+        <span class="ml-2">{{ item.label }}</span>
         <Badge v-if="item.badge" :class="{ 'ml-auto': !root, 'ml-2': root }" :value="item.badge" />
         <span v-if="item.shortcut"
           class="ml-auto border border-surface-200 dark:border-surface-500 rounded-md bg-surface-100 dark:bg-surface-800 text-xs p-1">{{
@@ -21,23 +21,21 @@
 
 <script setup lang="ts">
 import Badge from 'primevue/badge'
-import { Exercise } from '@/stores/modules/exercise/types'
 import Menubar from 'primevue/menubar'
 import ShowPage from '../pages/ShowPage.vue'
-import { nanoid } from 'nanoid'
 import { ref } from 'vue'
-import { useExerciseStore } from '@/stores'
+import { useRouter } from 'vue-router'
 
 
-const store = useExerciseStore()
-
+const router = useRouter()
 const items = ref([
   {
     label: '添加模板',
     icon: 'pi pi-file-plus',
+    // 重定向到 /add 页面
     action: () => {
-      store.addExercise(new Exercise(nanoid(), '新卡片', '新卡片内容'))
-    }
+      router.push('/add')
+    },
   },
 ])
 </script>
