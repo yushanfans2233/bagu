@@ -22,9 +22,11 @@ import { ref } from 'vue'
 
 import { Template } from '@/stores/modules/template/types'
 
-defineProps({
+const props = defineProps({
   template: Template
 })
+
+const onDelete = defineEmits(['delete'])
 
 const menu = ref(null)
 
@@ -46,7 +48,10 @@ const items = ref([
   },
   {
     label: 'Delete',
-    icon: 'pi pi-times'
+    icon: 'pi pi-times',
+    command: () => {
+      onDelete('delete', props.template)
+    }
   }
 ])
 </script>
