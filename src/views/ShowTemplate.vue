@@ -12,19 +12,20 @@
 
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import Toast from 'primevue/toast';
-import ConfirmDialog from 'primevue/confirmdialog';
-import { useConfirm } from "primevue/useconfirm";
-import { useToast } from "primevue/usetoast";
+import ConfirmDialog from 'primevue/confirmdialog'
+import Toast from 'primevue/toast'
+import { useConfirm } from 'primevue/useconfirm'
+import { useToast } from 'primevue/usetoast'
+
 import TemplatePanel from '@/components/TemplatePanel.vue'
 import { useTemplateStore } from '@/stores'
-import { Template } from '@/stores/modules/template/types';
+import { Template } from '@/stores/modules/template/types'
 
 const store = useTemplateStore()
 var { templates } = storeToRefs(store)
 
-const confirm = useConfirm();
-const toast = useToast();
+const confirm = useConfirm()
+const toast = useToast()
 
 const onDeleteTemplate = (template: Template) => {
   confirm.require({
@@ -44,10 +45,10 @@ const onDeleteTemplate = (template: Template) => {
     accept: () => {
       store.deleteTemplate(template.id)
 
-      toast.add({ severity: 'info', summary: 'Confirmed', detail: 'Record deleted', life: 3000 });
+      toast.add({ severity: 'info', summary: 'Confirmed', detail: 'Record deleted', life: 3000 })
     },
     reject: () => {
-      toast.add({ severity: 'error', summary: 'Rejected', detail: 'You have rejected', life: 3000 });
+      toast.add({ severity: 'error', summary: 'Rejected', detail: 'You have rejected', life: 3000 })
     }
   })
 }
