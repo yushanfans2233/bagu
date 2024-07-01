@@ -17,7 +17,11 @@ module.exports = {
       'extends': [
         'plugin:playwright/recommended'
       ]
-    }
+    },
+    {
+      'files': ['*.json', '*.json5'],
+      'parser': 'jsonc-eslint-parser',
+    },
   ],
   parserOptions: {
     ecmaVersion: 'latest'
