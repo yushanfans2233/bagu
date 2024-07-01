@@ -23,12 +23,12 @@ import { ref } from 'vue'
 import { Template } from '@/stores/modules/template/types'
 
 const props = defineProps({
-  template: Template
+  template: { type: Template, required: true }
 })
 
 const onDelete = defineEmits(['delete'])
 
-const menu = ref(null)
+const menu = ref()
 
 const toggle = (event: MouseEvent) => {
   menu.value.toggle(event)
