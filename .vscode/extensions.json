@@ -1,8 +1,9 @@
 {
   "recommendations": [
     "Vue.volar",
-    "ms-playwright.playwright",
+    "ms-vscode.vscode-typescript-next",
     "dbaeumer.vscode-eslint",
-    "oxc.oxc-vscode"
+    "oxc.oxc-vscode",
+    "ms-playwright.playwright",
   ]
 }
