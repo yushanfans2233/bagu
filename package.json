@@ -45,7 +45,7 @@
     "jsdom": "^24.1.0",
     "jsonc-eslint-parser": "^2.4.0",
     "npm-run-all2": "^6.2.0",
-    "oxlint": "^0.5.1",
+    "oxlint": "^0.5.3",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.4",
     "typescript": "~5.4.5",
