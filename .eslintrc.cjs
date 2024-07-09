@@ -1,6 +1,7 @@
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution')
 
+
 module.exports = {
   root: true,
   extends: [
@@ -26,12 +27,14 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest'
   },
-  plugins: ['simple-import-sort'],
+  plugins: ['simple-import-sort', '@stylistic/ts', '@stylistic/js', 'unused-imports'],
   rules: {
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
-    '@typescript-eslint/no-unused-vars': ['error']
+    '@typescript-eslint/no-unused-vars': 'error',
+    '@stylistic/js/no-multiple-empty-lines': ['error', { 'max': 2, 'maxEOF': 0, 'maxBOF': 0 }],
+    'unused-imports/no-unused-imports': 'error',
   }
 }
