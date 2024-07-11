@@ -1,4 +1,5 @@
 <template>
+  <ToolBar />
   <RouterView />
 </template>
 
@@ -6,5 +7,6 @@
 import 'primeicons/primeicons.css'
 
 import { RouterView } from 'vue-router'
-</script>
 
+import ToolBar from './components/ToolBar.vue'
+</script>

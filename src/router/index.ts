@@ -4,18 +4,19 @@ const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [{
         path: '/',
-        name: 'home',
+        name: 'Home',
         component: () => import('../views/HomeView.vue')
-    },{
-        path: '/add',
-        name:'addpage',
-        component: () => import('../views/AddTemplate.vue')
     },
     {
-        path: '/show',
-        name: 'showpage',
-        component: () => import('../views/ShowTemplate.vue')
+        path: '/practice/:id',
+        name: 'Practice',
+        component: () => import('../views/PracticeView.vue')
     },
+    {
+        path: '/practice/:id/records',
+        name: 'PracticeRecords',
+        component: () => import('../views/PracticeRecordsView.vue')
+    }
     ]
 })
 
