@@ -33,8 +33,8 @@ import SplitterPanel from 'primevue/splitterpanel'
 import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
+import type { PracticeRecord } from '@/core/type/PracticeRecord'
 import { usePracticeRecordStore } from '@/stores/PracticeRecord'
-import type { PracticeRecord } from '@/types/PracticeRecord'
 
 
 const route = useRoute()

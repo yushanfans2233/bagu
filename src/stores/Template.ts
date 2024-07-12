@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-import { Template } from '@/types/Template'
+import { Template } from '@/core/type/Template'
 
 const name = 'Template'
 

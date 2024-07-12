@@ -25,7 +25,7 @@ import Card from 'primevue/card'
 import Menu from 'primevue/menu'
 import { ref } from 'vue'
 
-import { Template } from '@/types/Template'
+import { Template } from '@/core/type/Template'
 
 const props = defineProps({
   template: { type: Template, required: true }

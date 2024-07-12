@@ -3,8 +3,8 @@ import { nanoid } from 'nanoid'
 import { defineStore, storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
 
-import { PracticeRecord, PracticeRecordPO } from '@/types/PracticeRecord'
-import { Template } from '@/types/Template'
+import { PracticeRecord, PracticeRecordPO } from '@/core/type/PracticeRecord'
+import { Template } from '@/core/type/Template'
 
 import { useTemplateStore } from './Template'
 

@@ -65,9 +65,9 @@ import InputText from 'primevue/inputtext'
 import Textarea from 'primevue/textarea'
 import { computed, ref, watch } from 'vue'
 
+import { Operation } from '@/core/type/Operation'
+import { Template } from '@/core/type/Template'
 import { useTemplateStore } from '@/stores/Template'
-import { Operation } from '@/types/Operation'
-import { Template } from '@/types/Template'
 
 const visible = defineModel('visible', { required: true })
 const template = defineModel<Template | undefined>('tempalte')
