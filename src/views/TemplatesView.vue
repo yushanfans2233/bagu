@@ -7,7 +7,7 @@
             <div style="width: 320px; height: 280px;" class="flex flex-col justify-center items-center"
               @click="onNewTemplate">
               <i class="pi pi-file-plus" style="font-size: 40px;color: var(--p-surface-400);"></i>
-              <p class="mt-1">Create a new template</p>
+              <p class="mt-1">create a new template</p>
             </div>
           </template>
         </Card>
@@ -34,9 +34,9 @@ import { useRouter } from 'vue-router'
 
 import TemplateCard from '@/components/TemplateCard.vue'
 import TemplateEditorDialog from '@/components/TemplateEditorDialog.vue'
+import { Operation } from '@/core/type/Operation'
+import { Template } from '@/core/type/Template'
 import { useTemplateStore } from '@/stores/Template'
-import { Operation } from '@/types/Operation'
-import { Template } from '@/types/Template'
 
 const router = useRouter()
 
