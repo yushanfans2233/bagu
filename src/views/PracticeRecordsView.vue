@@ -18,14 +18,13 @@
         </Listbox>
       </SplitterPanel>
       <SplitterPanel class="flex items-center justify-center" :size="80" :min-size="80">
-        <div ref="diffEditorContainer" class="flex-1 h-full"></div>
+        <DiffPanel :left="left" :right="right" />
       </SplitterPanel>
     </Splitter>
   </div>
 </template>
 
 <script setup lang="ts">
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 import { storeToRefs } from 'pinia'
 import Listbox from 'primevue/listbox'
 import Splitter from 'primevue/splitter'
@@ -33,9 +32,9 @@ import SplitterPanel from 'primevue/splitterpanel'
 import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
+import DiffPanel from '@/components/DiffPanel.vue'
 import type { PracticeRecord } from '@/core/type/PracticeRecord'
 import { usePracticeRecordStore } from '@/stores/PracticeRecord'
-
 
 const route = useRoute()
 const templateId = route.params.id
@@ -49,46 +48,24 @@ const currentTemplatePracticeRecords = computed(() => practiceRecords.value.filt
 
 const dateTimeFormatter = new Intl.DateTimeFormat()
 
-const diffEditorContainer = ref<HTMLElement>()
+const left = computed(() => selectedPracticeRecord.value?.originalContent ?? '')
+const right = computed(() => selectedPracticeRecord.value?.actualContent ?? '')
+
 onMounted(() => {
-  if (!diffEditorContainer.value) {
-    throw new Error('diffEditor is not defined')
-
-  }
-
-  const diffEditor = monaco.editor.createDiffEditor(diffEditorContainer.value, {
-    enableSplitViewResizing: false,
-    readOnly: true,
-    minimap: { enabled: false },
-    wordWrap: 'on',
-  })
-
-  const originalModel = monaco.editor.createModel('', 'text/plain')
-  const modifiedModel = monaco.editor.createModel('', 'text/plain')
-
-  diffEditor.setModel({
-    original: originalModel,
-    modified: modifiedModel,
-  })
-
   watch(
-    selectedPracticeRecord,
+    currentTemplatePracticeRecords,
     (newValue) => {
-      originalModel.setValue(newValue?.originalContent ?? '')
-      modifiedModel.setValue(newValue?.actualContent ?? '')
-    }
+      if (selectedPracticeRecord.value) {
+        return
+      }
+
+      if (newValue.length === 0) {
+        return
+      }
+
+      selectedPracticeRecord.value = newValue[0]
+    },
+    { once: true }
   )
-
-  watch(currentTemplatePracticeRecords, (newValue) => {
-    if (selectedPracticeRecord.value) {
-      return
-    }
-
-    if (newValue.length === 0) {
-      return
-    }
-
-    selectedPracticeRecord.value = newValue[0]
-  })
 })
 </script>
