@@ -15,4 +15,32 @@ export class Version {
       this.prerelease === other.prerelease &&
       this.meta === other.meta
   }
+
+  lessThan(other: Version): boolean {
+    if (this.major < other.major) {
+      return true
+    }
+
+    if (this.major > other.major) {
+      return false
+    }
+
+    if (this.minor < other.minor) {
+      return true
+    }
+
+    if (this.minor > other.minor) {
+      return false
+    }
+
+    if (this.patch < other.patch) {
+      return true
+    }
+
+    if (this.patch > other.patch) {
+      return false
+    }
+
+    return false
+  }
 }

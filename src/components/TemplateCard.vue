@@ -1,7 +1,9 @@
 <template>
   <Card class="overflow-hidden" style="width: 360px; height: 320px;">
     <template #title>
-      <span>{{ template.title }}</span>
+      <span class="whitespace-nowrap overflow-hidden overflow-ellipsis block" style="height: 30px;">
+        {{ template.title }}
+      </span>
     </template>
     <template #content>
       <p class="m-0 overflow-hidden h-48 gradient-fade">

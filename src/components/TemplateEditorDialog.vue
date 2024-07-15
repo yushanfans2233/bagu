@@ -6,14 +6,14 @@
     </div>
     <div class="flex flex-col mt-4">
       <label for="context" class="font-semibold w-24 p-1">Context</label>
-      <Textarea id="context" class="flex-auto" autocomplete="off" rows="20" cols="100" v-model="content"
+      <Textarea id="context" class="flex-auto" autocomplete="off" rows="10" cols="100" v-model="content"
         :readonly="readonly" />
     </div>
     <div class="flex flex-col mt-4">
       <label class="font-semibold w-24 p-1">Note</label>
-      <Editor v-model="note" editorStyle="height: 220px" :readonly="readonly">
-        <template v-slot:toolbar>
-          <div v-if="!readonly">
+      <div v-if="!readonly">
+        <Editor v-model="note" editorStyle="height: 100px" :readonly="readonly">
+          <template v-slot:toolbar>
             <span class="ql-formats">
               <select class="ql-header" defaultValue="0">
                 <option value="1">Heading</option>
@@ -42,12 +42,17 @@
             <span class="ql-formats">
               <button class="ql-clean" type="button"></button>
             </span>
-          </div>
-          <div v-else>
 
-          </div>
-        </template>
-      </Editor>
+          </template>
+        </Editor>
+      </div>
+      <div class="border-t" v-else>
+        <Editor v-model="note" editorStyle="height: 220px" :readonly="readonly" :pt:toolbar:class="'hidden'">
+          <template v-slot:toolbar>
+            <div></div>
+          </template>
+        </Editor>
+      </div>
     </div>
     <div class="flex justify-end gap-2 mt-4" v-if="!readonly">
       <Button type="button" label="Cancel" severity="secondary" @click="visible = false"></Button>

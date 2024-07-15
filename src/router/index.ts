@@ -16,6 +16,11 @@ const router = createRouter({
         path: '/practice/:id/records',
         name: 'PracticeRecords',
         component: () => import('../views/PracticeRecordsView.vue')
+    },
+    {
+        path: '/library/template',
+        name: 'TemplateLibrary',
+        component: () => import('../views/TemplateLibraryView.vue')
     }
     ]
 })

@@ -1,5 +1,6 @@
 import { version } from '../Metadata'
 import { versionManager } from '../storage/Metadata'
+import { SetTemplateLibraryBadgeToOne } from './migrations'
 
 export async function install() {
   const localVersion = await versionManager.getLocalVersion()
@@ -9,4 +10,6 @@ export async function install() {
   }
 
   await versionManager.setLocalVersion(version)
+
+  await SetTemplateLibraryBadgeToOne()
 }
