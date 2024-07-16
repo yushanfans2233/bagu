@@ -3,7 +3,7 @@
     <Splitter style="height: 80vh">
       <SplitterPanel class="flex justify-center" :size="20" :min-size="20">
         <Listbox striped v-model="selectedPracticeRecord" :options="currentTemplatePracticeRecords"
-          optionLabel="template.title" class="w-full">
+          optionLabel="template.title" class="w-full" scrollHeight="100%">
           <template #option="slotProps">
             <div class="flex justify-between w-full">
               <span>
