@@ -26,6 +26,18 @@ onMounted(async () => {
 
   const { editor } = await import('monaco-editor')
 
+  editor.defineTheme('custom-diff-theme', {
+    base: 'vs',
+    inherit: true,
+    rules: [],
+    colors: {
+      'diffEditor.insertedLineBackground': '#f0fdfa',
+      'diffEditor.insertedTextBackground': '#22c55e',
+      'diffEditor.removedLineBackground': '#fff1f2',
+      'diffEditor.removedTextBackground': '#fca5a5',
+    },
+  })
+
   const leftModel = editor.createModel(props.left, 'text/plain')
   const rightModel = editor.createModel(props.right, 'text/plain')
 
@@ -33,7 +45,7 @@ onMounted(async () => {
     readOnly: true,
     wordWrap: 'on',
     automaticLayout: true,
-    theme: 'vs',
+    theme: 'custom-diff-theme',
     minimap: { enabled: false },
   })
 
