@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@primevue/themes':
-        specifier: 4.0.0-rc.3
-        version: 4.0.0-rc.3(@primeuix/styled@0.0.5)
+        specifier: 4.0.4
+        version: 4.0.4
       localforage:
         specifier: ^1.10.0
         version: 1.10.0
@@ -584,11 +584,9 @@ packages:
     resolution: {integrity: sha512-9B5a8YDJuKTV8GyFwbftdPDzPDh8v/Ro9nCWY5IFl3s/1jviAxAeTeKNwT8RMb7yPufbpGlLmcyNDHnNW01XrQ==}
     engines: {node: '>=12.11.0'}
 
-  '@primevue/themes@4.0.0-rc.3':
-    resolution: {integrity: sha512-c79Ue5hwgcBUu5Ax2X2lvmwcpK46WOckEvhAJTpnF7SELrXLJDVNiklSBlNtyi4/MNNyTMQ4uyQcQJpVQTacmw==}
+  '@primevue/themes@4.0.4':
+    resolution: {integrity: sha512-eknRgSo1KQY+r7LEtb/jERhVHq4/Vlu5BKBQ8/Sc/G3DBDHaeJTDqYHWWoTxdaTJkXbC2pJMKFaJ/Vs7LuoIOw==}
     engines: {node: '>=12.11.0'}
-    peerDependencies:
-      '@primeuix/styled': ^0.0.5
 
   '@rollup/pluginutils@5.1.0':
     resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
@@ -2945,7 +2943,7 @@ snapshots:
       - '@primeuix/utils'
       - vue
 
-  '@primevue/themes@4.0.0-rc.3(@primeuix/styled@0.0.5)':
+  '@primevue/themes@4.0.4':
     dependencies:
       '@primeuix/styled': 0.0.5
 
